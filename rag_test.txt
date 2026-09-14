@@ -1,0 +1,272 @@
+Η παρούσα μεταπτυχιακή διατριβή πραγματεύεται τον σχεδιασμό, την υλοποίηση και την πειραματική αξιολόγηση ενός κλιμακούμενου συστήματος ανίχνευσης επιθέσεων και εντοπισμού ευπαθειών σε περιβάλλον Industrial Internet of Things (IIoT) με έμφαση σε εφαρμογές logistics. Η έρευνα εστιάζει στην ανάγκη αυτοματοποιημένης παρακολούθησης βιομηχανικών και υβριδικών IT/OT υποδομών, λαμβάνοντας υπόψη τη διευρυνόμενη επιφάνεια επίθεσης και τις σύγχρονες απειλές κυβερνοασφάλειας.
+ Το προτεινόμενο σύστημα υλοποιήθηκε με αρχιτεκτονική Flask + Celery και αξιολογήθηκε σε περιβάλλον έως 310 agents, επιτυγχάνοντας 100% detection rate με μηδενικά false positives. Η ανάλυση απόδοσης έδειξε γραμμική κλιμάκωση για μικρό φόρτο (17–62 agents) και σταδιακό κορεσμό μετά τους 100 agents , με θεωρητικό μοντέλο λογιστικής κλιμάκωσης (R² = 0.97). Η στατιστική ανάλυση (ANOVA) επιβεβαίωσε τη σημαντική επίδραση του φόρτου στην απόδοση (p < 0.001)  Η αξιολόγηση ανίχνευσης επιθέσεων (Port Scan, Brute Force, Telemetry Flood) κατέδειξε υψηλή αποτελεσματικότητα, με μέσο χρόνο ανίχνευσης 11.6 sec και AUC = 0.98 στην καμπύλη ROC , γεγονός που καταδεικνύει εξαιρετική διακριτική ικανότητα του συστήματος. Επιπλέον, πραγματοποιήθηκε συγκριτική ανάλυση με σύγχρονες προσεγγίσεις της βιβλιογραφίας, όπου το σύστημα παρουσίασε ανώτερη απόδοση τόσο σε detection rate όσο και σε latency  Τα αποτελέσματα τεκμηριώνουν ότι η προτεινόμενη αρχιτεκτονική μπορεί να υποστηρίξει βιομηχανικό περιβάλλον μεγάλης κλίμακας με υψηλή αξιοπιστία και προβλεψιμότητα συμπεριφοράς, συνδυάζοντας θεωρητικά μοντέλα ουρών με εμπειρική αξιολόγηση.
+ACID
+Ατομικότητα, Συνέπεια, Απομόνωση, Ανθεκτικότητα
+Atomicity, Consistency, Isolation, Durability
+AGV
+Αυτόματα Καθοδηγούμενο Όχημα
+Automated Guided Vehicle
+AI
+Τεχνητή Νοημοσύνη
+Artificial Intelligence
+AMR
+Αυτόνομο Κινητό Ρομπότ
+Autonomous Mobile Robot
+ANOVA
+Ανάλυση Διασποράς
+Analysis of Variance
+AP
+Διαθεσιμότητα και Ανοχή Διαμερισμού
+Availability and Partition Tolerance
+API
+Διεπαφή Προγραμματισμού Εφαρμογών
+Application Programming Interface
+APT
+Προηγμένη Διαρκής Απειλή
+Advanced Persistent Threat
+AUC
+Εμβαδόν Κάτω από την Καμπύλη
+Area Under the Curve
+CEM
+Συνεχής Διαχείριση Έκθεσης
+Continuous Exposure Management
+CISO
+Επικεφαλής Υπεύθυνος Ασφάλειας Πληροφοριών
+Chief Information Security Officer
+CI/CD
+Συνεχής Ενσωμάτωση / Συνεχής Παράδοση
+Continuous Integration / Continuous Delivery
+CMMS
+Σύστημα Διαχείρισης Συντήρησης Υπολογιστών
+Computerized Maintenance Management System
+CNM
+Μοντέλο Δικτύου Κοντέινερ
+Container Network Model
+CORAS
+Μοντέλο Εκτίμησης Κινδύνου
+Risk Assessment Model (Framework)
+CP
+Συνέπεια και Ανοχή Διαμερισμού
+Consistency and Partition Tolerance
+CPS
+Κυβερνο-Φυσικά Συστήματα
+Cyber-Physical Systems
+CPU
+Κεντρική Μονάδα Επεξεργασίας
+Central Processing Unit
+CRC
+Κυκλικός Έλεγχος Πλεονασμού
+Cyclic Redundancy Check
+CSIRT
+Ομάδα Αντιμετώπισης Περιστατικών Ασφάλειας Υπολογιστών
+Computer Security Incident Response Team
+CTEM
+Συνεχής Διαχείριση Απειλών και Έκθεσης
+Continuous Threat and Exposure Management
+CVE
+Κοινές Ευπάθειες και Εκθέσεις
+Common Vulnerabilities and Exposures
+CVSS
+Κοινό Σύστημα Βαθμολόγησης Ευπαθειών
+Common Vulnerability Scoring System
+DDoS
+Κατανεμημένη Άρνηση Υπηρεσίας
+Distributed Denial of Service
+DNS
+Σύστημα Ονομάτων Τομέα
+Domain Name System
+DoE
+Σχεδιασμός Πειραμάτων
+Design of Experiments
+DoS
+Άρνηση Υπηρεσίας
+Denial of Service
+DSL
+Γλώσσα Ειδικού Πεδίου
+Domain-Specific Language
+DT
+Ψηφιακό Δίδυμο
+Digital Twin
+EAM
+Διαχείριση Εταιρικών Περιουσιακών Στοιχείων
+Enterprise Asset Management
+FPR
+Ποσοστό Ψευδώς Θετικών
+False Positive Rate
+GDPR
+Γενικός Κανονισμός Προστασίας Δεδομένων
+General Data Protection Regulation
+HATEOAS
+Υπερμέσα ως Μηχανή Κατάστασης Εφαρμογής
+Hypermedia as the Engine of Application State
+IAM
+Διαχείριση Ταυτότητας και Πρόσβασης
+Identity and Access Management
+ICS
+Βιομηχανικό Σύστημα Ελέγχου
+Industrial Control System
+IDS
+Σύστημα Ανίχνευσης Εισβολών
+Intrusion Detection System
+IEC
+Διεθνής Ηλεκτροτεχνική Επιτροπή
+International Electrotechnical Commission
+IIoT
+Βιομηχανικό Διαδίκτυο των Πραγμάτων
+Industrial Internet of Things
+IoT
+Διαδίκτυο των Πραγμάτων
+Internet of Things
+IP
+Διεύθυνση Πρωτοκόλλου Διαδικτύου
+Internet Protocol address
+IPS
+Σύστημα Πρόληψης Εισβολών
+Intrusion Prevention System
+ISA
+Διεθνής Εταιρεία Αυτοματισμού
+International Society of Automation
+ISO
+Διεθνής Οργανισμός Τυποποίησης
+International Organization for Standardization
+IT
+Τεχνολογία Πληροφορικής
+Information Technology
+JSON
+Σημειογραφία Αντικειμένων JavaScript
+JavaScript Object Notation
+JWT
+JSON Web Token
+JSON Web Token
+LAN
+Τοπικό Δίκτυο Υπολογιστών
+Local Area Network
+ML
+Μηχανική Μάθηση
+Machine Learning
+MITM
+Επίθεση του Ανθρώπου στη Μέση
+Man-in-the-Middle attack
+MQTT
+Μεταφορά Τηλεμετρίας Μέσω Ουράς Μηνυμάτων
+Message Queuing Telemetry Transport
+MTTD
+Μέσος Χρόνος Εντοπισμού
+Mean Time to Detect
+MTTR
+Μέσος Χρόνος Αποκατάστασης
+Mean Time to Respond / Repair
+NAT
+Μετάφραση Διευθύνσεων Δικτύου
+Network Address Translation
+NIST
+Εθνικό Ινστιτούτο Προτύπων και Τεχνολογίας
+National Institute of Standards and Technology
+NSE
+Μηχανή Σεναρίων Nmap
+Nmap Scripting Engine
+OS
+Λειτουργικό Σύστημα
+Operating System
+OSI
+Διασύνδεση Ανοικτών Συστημάτων
+Open Systems Interconnection
+OT
+Επιχειρησιακή Τεχνολογία
+Operational Technology
+p-value
+Τιμή Πιθανότητας
+Probability Value
+PLC
+Προγραμματιζόμενος Λογικός Ελεγκτής
+Programmable Logic Controller
+PLC (process)
+Κύκλος Ζωής Διεργασίας
+Process Lifecycle
+R²
+Συντελεστής Προσδιορισμού
+Coefficient of Determination
+RAM
+Μνήμη Τυχαίας Προσπέλασης
+Random Access Memory
+RDBMS
+Σύστημα Διαχείρισης Σχεσιακών Βάσεων Δεδομένων
+Relational Database Management System
+RFID
+Αναγνώριση Μέσω Ραδιοσυχνοτήτων
+Radio-Frequency Identification
+REST
+Μεταφορά Κατάστασης Αντιπροσώπου
+Representational State Transfer
+ROC
+Λειτουργικό Χαρακτηριστικό Δέκτη
+Receiver Operating Characteristic
+SAST
+Στατική Δοκιμή Ασφάλειας Εφαρμογών
+Static Application Security Testing
+SBOM
+Λίστα Υλικών Λογισμικού
+Software Bill of Materials
+SCADA
+Σύστημα Εποπτικού Ελέγχου και Συλλογής Δεδομένων
+Supervisory Control and Data Acquisition
+SIEM
+Διαχείριση Πληροφοριών και Συμβάντων Ασφαλείας
+Security Information and Event Management
+SLA
+Συμφωνία Επιπέδου Υπηρεσιών
+Service Level Agreement
+SOAR
+Ενορχήστρωση Ασφάλειας, Αυτοματοποίηση και Ανταπόκριση
+Security Orchestration, Automation and Response
+SOC
+Κέντρο Επιχειρήσεων Ασφαλείας
+Security Operations Center
+SPEC
+Συμβούλιο Αξιολόγησης Επιδόσεων Προτύπων
+Standard Performance Evaluation Corporation
+SQL
+Δομημένη Γλώσσα Ερωτημάτων
+Structured Query Language
+SRE
+Μηχανική Αξιοπιστίας Ιστοτόπων
+Site Reliability Engineering
+SSH
+Ασφαλές Κέλυφος
+Secure Shell
+TCP
+Πρωτόκολλο Ελέγχου Μετάδοσης
+Transmission Control Protocol
+TLS
+Ασφάλεια Επιπέδου Μεταφοράς
+Transport Layer Security
+TMS
+Σύστημα Διαχείρισης Μεταφορών
+Transportation Management System
+TPC
+Συμβούλιο Απόδοσης Συναλλαγών
+Transaction Processing Performance Council
+TPR
+Ποσοστό Αληθώς Θετικών
+True Positive Rate
+UDP
+Πρωτόκολλο Δεδομενογραμμάτων Χρήστη
+User Datagram Protocol
+UI/UX
+Διεπαφή Χρήστη / Εμπειρία Χρήστη
+User Interface / User Experience
+VLAN
+Εικονικό Τοπικό Δίκτυο
+Virtual Local Area Network
+VM
+Εικονική Μηχανή
+Virtual Machine
+WMS
+Σύστημα Διαχείρισης Αποθήκης
+Warehouse Management System
+XML
+Επεκτάσιμη Γλώσσα Σήμανσης
+eXtensible Markup Language
+YAML
+YAML Δεν Είναι Γλώσσα Σήμανσης
+YAML Ain't Markup Language
