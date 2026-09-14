@@ -44,3 +44,10 @@
 
 ```bash
 pip install spacy pypdf python-docx
+
+(Σημείωση: Το ελληνικό μοντέλο el_core_news_sm της spacy κατεβαίνει ξεχωριστά μετά την εγκατάσταση των requirements με την εντολή
+
+```bash
+python -m spacy download el_core_news_sm
+
+).
